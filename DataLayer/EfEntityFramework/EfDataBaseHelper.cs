@@ -58,20 +58,9 @@ namespace DataLayer.EfEntityFramework
 
         private void DeleteAll()
         {
-            foreach (var tutoringSession in tutoringSessionRepository.GetAll())
-            {
-                tutoringSessionRepository.Delete(tutoringSession);
-            }
-
-            foreach (var helpedStudent in helpedStudentRepository.GetAll())
-            {
-                helpedStudentRepository.Delete(helpedStudent);
-            }
-
-            foreach (var tutor in tutorRepository.GetAll())
-            {
-                tutorRepository.Delete(tutor);
-            }
+            tutoringSessionRepository.DeleteAll();
+            helpedStudentRepository.DeleteAll();
+            tutorRepository.DeleteAll();
         }
     }
 }

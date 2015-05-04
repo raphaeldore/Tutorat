@@ -14,5 +14,7 @@ namespace DataLayer
         void Add(T entity);
 
         void Update(T entity);
+
+        void DeleteAll();
     }
 }

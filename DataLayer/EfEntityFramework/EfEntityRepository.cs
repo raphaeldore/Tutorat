@@ -21,8 +21,6 @@ namespace DataLayer.EfEntityFramework
 
         public T GetById(int id)
         {
-            //return _context.Entry(T entity).
-            //return _contex.Set<T>().
             return _context.Set<T>().Find(id); //Where(entity => entity.Id == id);
         }
 
@@ -35,6 +33,12 @@ namespace DataLayer.EfEntityFramework
         public void Add(T entity)
         {
             _context.Set<T>().Add(entity);
+            _context.SaveChanges();
+        }
+
+        public void DeleteAll()
+        {
+            _context.Set<T>().RemoveRange(_context.Set<T>());
             _context.SaveChanges();
         }
 
@@ -52,10 +56,5 @@ namespace DataLayer.EfEntityFramework
             _context.Entry<T>(entity).State = EntityState.Modified;
             _context.SaveChanges();
         }
-
-        //public void DropTable(string tableName)
-        //{
-        //    _context.Database.SqlQuery<Entity>("TRUNCATE TABLE @param1", new SqlParameter("param1", tableName));
-        //}
     }
 }
