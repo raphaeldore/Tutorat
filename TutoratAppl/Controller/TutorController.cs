@@ -18,10 +18,25 @@ namespace TutoratAppl.Controller
             this.IEntityRepository = _IEntityRepository;
         }
 
-        public void ListAllTutors()
+        public void ListAll()
         {
             //Imprimer le nom, prénom, courriel, total heures tutorat, passéess et à venir, réalisées et planifiées
             TutorViewList affichage = new TutorViewList(IEntityRepository.GetAll().ToList());
+            
+        }
+
+        public void ListAllWithWorkingHoursTotal()
+        {
+        
+        }
+
+        public ListWhenNextTutoringSession()
+        {
+        
+        }
+
+        public void ListWhenWithoutTutoringSession(DateTime sessionDate)
+        {
             
         }
     }

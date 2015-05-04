@@ -17,8 +17,15 @@ namespace TutoratAppl.Controller
         {
             this.IEntityRepository = _IEntityRepository;
         }
-        
 
+        public void ListAll()
+        {
+            
+        }
 
+        public void ListWhenWithoutTutoringSession()
+        {
+            
+        }
     }
 }
