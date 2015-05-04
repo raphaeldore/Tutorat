@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TutoratAppl.View
 {
-    class TutorListView
+    public class TutorListView
     {
         IEnumerable<TutorsListVM> Tutors;
 
@@ -17,7 +17,7 @@ namespace TutoratAppl.View
 
         public void Display()
         {
-            Console.WriteLine("Ta mêre!");
+            Console.WriteLine("TODO: Implement TutorListView display");
         }
     }
 }

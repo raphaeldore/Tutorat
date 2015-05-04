@@ -5,16 +5,11 @@ namespace DataLayer
 {
     public interface IEntityRepository<T> where T : Entity
     {
-        IQueryable<T> GetAll();
-
-        T GetById(int id);
-
-        void Delete(T entity);
-
-        void Add(T entity);
-
-        void Update(T entity);
-
-        void DeleteAll();
+        public IQueryable<T> GetAll();
+        public T GetById(int id);
+        public void Delete(T entity);
+        public void Add(T entity);
+        public void Update(T entity);
+        public void DeleteAll();
     }
 }

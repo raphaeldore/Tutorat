@@ -6,13 +6,12 @@ using System.Threading.Tasks;
 
 namespace TutoratAppl.ViewModel
 {
-    class TutorListVM
+    public class TutorListVM
     {
-        string EmailAddress { get; set; }
-        string FirstName { get; set; }
-        string LastName { get; set; }
-        int ID { get; set; }
-
+        public string EmailAddress { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public int ID { get; set; }
         public string ToString()
         {
             return "Courriel: " + EmailAddress + ", Nom: " + FirstName + " " + LastName + ", ID: " + ID.ToString();

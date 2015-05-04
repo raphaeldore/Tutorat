@@ -9,7 +9,7 @@ using DataLayer.Model;
 
 namespace TutoratAppl.Controller
 {
-    class TutoringSessionController
+    public class TutoringSessionController
     {
         private readonly IEntityRepository<HelpedStudent> IEntityRepository;
 

@@ -13,7 +13,6 @@ namespace DataLayer.Model
         public string LastName { get; set; }
         public string FirstName { get; set; }
         public string EmailAddress { get; set; }
-
         public virtual List<HelpedStudent> helpedStudents { get; set; }
         public virtual List<TutoringSession> tutoringSessions {get; set;}
     }
