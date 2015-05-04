@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TutoratAppl.View;
 
 namespace TutoratAppl.Controller
 {
@@ -17,5 +18,11 @@ namespace TutoratAppl.Controller
             this.IEntityRepository = _IEntityRepository;
         }
 
+        public void ListAllTutors()
+        {
+            //Imprimer le nom, prénom, courriel, total heures tutorat, passéess et à venir, réalisées et planifiées
+            TutorViewList affichage = new TutorViewList(IEntityRepository.GetAll().ToList());
+            
+        }
     }
 }

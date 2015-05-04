@@ -9,11 +9,11 @@ using DataLayer.Model;
 
 namespace TutoratAppl.Controller
 {
-    public class HelpedStudentController
+    class TutoringSessionController
     {
         private readonly IEntityRepository<HelpedStudent> IEntityRepository;
 
-        public HelpedStudentController(IEntityRepository<HelpedStudent> _IEntityRepository)
+        public TutoringSessionController(IEntityRepository<HelpedStudent> _IEntityRepository)
         {
             this.IEntityRepository = _IEntityRepository;
         }
