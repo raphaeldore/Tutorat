@@ -8,11 +8,16 @@ namespace TutoratAppl.View
 {
     class TutorListView
     {
-        IEnumerable<Tutors> Tutors;
+        IEnumerable<TutorsListVM> Tutors;
 
-        public TutorListView(IEnumerable<Tutors> _Tutors)
+        public TutorListView(IEnumerable<TutorsListVM> _Tutors)
         {
             Tutors = _Tutors;
+        }
+
+        public void Display()
+        {
+            Console.WriteLine("Ta mêre!");
         }
     }
 }

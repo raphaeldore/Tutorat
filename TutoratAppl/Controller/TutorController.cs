@@ -30,7 +30,7 @@ namespace TutoratAppl.Controller
         
         }
 
-        public ListWhenNextTutoringSession()
+        public void ListWhenNextTutoringSession()
         {
         
         }
