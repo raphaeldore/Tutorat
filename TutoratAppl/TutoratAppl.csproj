@@ -71,6 +71,10 @@
     <Compile Include="View\HelpedListView.cs" />
     <Compile Include="View\SessionListView.cs" />
     <Compile Include="View\TutorListView.cs" />
+<<<<<<< HEAD
+=======
+    <Compile Include="ViewModel\TutorsListVM.cs" />
+>>>>>>> origin/master
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
