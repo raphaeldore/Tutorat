@@ -61,6 +61,7 @@
     <Compile Include="Controller\HelpedStudentController.cs" />
     <Compile Include="Controller\TutorController.cs" />
     <Compile Include="Controller\TutoringSessionController.cs" />
+    <Compile Include="Controller\TutorViewList.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModel\HelpedListVM.cs" />
@@ -71,6 +72,7 @@
     <Compile Include="View\HelpedListView.cs" />
     <Compile Include="View\SessionListView.cs" />
     <Compile Include="View\TutorListView.cs" />
+    <Compile Include="View\TutorsListVM.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

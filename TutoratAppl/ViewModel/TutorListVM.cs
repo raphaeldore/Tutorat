@@ -12,7 +12,7 @@ namespace TutoratAppl.ViewModel
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public int ID { get; set; }
-        public string ToString()
+        public override string ToString()
         {
             return "Courriel: " + EmailAddress + ", Nom: " + FirstName + " " + LastName + ", ID: " + ID.ToString();
         }
