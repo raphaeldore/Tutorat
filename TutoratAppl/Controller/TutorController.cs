@@ -21,8 +21,8 @@ namespace TutoratAppl.Controller
         public void ListAll()
         {
             //Imprimer le nom, prénom, courriel, total heures tutorat, passéess et à venir, réalisées et planifiées
-            TutorViewList affichage = new TutorViewList(IEntityRepository.GetAll().ToList());
-            
+            TutorListView affichage = new TutorListView(IEntityRepository.GetAll().ToList());
+            affichage.Display();
         }
 
         public void ListAllWithWorkingHoursTotal()

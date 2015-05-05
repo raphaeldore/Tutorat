@@ -8,5 +8,6 @@ namespace TutoratAppl.ViewModel
 {
     public class ScheduleTutorListVM
     {
+
     }
 }

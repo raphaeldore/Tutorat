@@ -3,21 +3,22 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TutoratAppl.ViewModel;
 
 namespace TutoratAppl.View
 {
     public class TutorListView
     {
-        private IEnumerable<TutorsListVM> Tutors;
+        private IEnumerable<TutorListVM> Tutors;
 
-        public TutorListView(IEnumerable<TutorsListVM> _Tutors)
+        public TutorListView(IEnumerable<TutorListVM> _Tutors)
         {
             Tutors = _Tutors;
         }
 
         public void Display()
         {
-            Console.WriteLine("TODO: Implement TutorListView display");
+            Console.WriteLine(Tutors.ToString());
         }
     }
 }
