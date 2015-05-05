@@ -18,7 +18,10 @@ namespace TutoratAppl.View
 
         public void Display()
         {
-            Console.WriteLine(Tutors.ToString());
+            foreach(TutorListVM t in Tutors)
+            {
+                Console.WriteLine(t.ToString());
+            }
         }
     }
 }

@@ -18,7 +18,10 @@ namespace TutoratAppl.View
 
         public void Display()
         {
-            Console.WriteLine("TODO: Implement SessionListView display");
+            foreach (SessionListVM s in Sessions)
+            {
+                Console.WriteLine(s.ToString());
+            }
         }
     }
 }

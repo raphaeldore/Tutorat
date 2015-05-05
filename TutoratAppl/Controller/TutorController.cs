@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TutoratAppl.View;
+using TutoratAppl.ViewModel;
 
 namespace TutoratAppl.Controller
 {
@@ -21,8 +22,8 @@ namespace TutoratAppl.Controller
         public void ListAll()
         {
             //Imprimer le nom, prénom, courriel, total heures tutorat, passéess et à venir, réalisées et planifiées
-            TutorListView affichage = new TutorListView(IEntityRepository.GetAll().ToList());
-            affichage.Display();
+            TutorListView display = new TutorListView(IEntityRepository.GetAll().ToList<TutorListVM>());
+            display.Display();
         }
 
         public void ListAllWithWorkingHoursTotal()

@@ -18,7 +18,10 @@ namespace TutoratAppl.View
 
         public void Display()
         {
-            Console.WriteLine("TODO: Implement HelpedListView display");
+            foreach (HelpedListVM h in HelpedStudents)
+            {
+                Console.WriteLine(h.ToString());
+            }
         }
     }
 }
