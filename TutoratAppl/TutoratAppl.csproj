@@ -72,7 +72,7 @@
     <Compile Include="View\HelpedListView.cs" />
     <Compile Include="View\SessionListView.cs" />
     <Compile Include="View\TutorListView.cs" />
-    <Compile Include="View\TutorsListVM.cs" />
+    <Compile Include="ViewModel\TutorsListVM.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
