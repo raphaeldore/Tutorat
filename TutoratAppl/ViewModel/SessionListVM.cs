@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,9 +17,10 @@ namespace TutoratAppl.ViewModel
         public string TutorFirstName { get; set; }
         public string TutorLastName { get; set; }
 
-        public string ToString()
+        public override string ToString()
         {
-
+            return ID.ToString() + " = " +  DateTimeSession.ToString("MM/dd/yyyy HH:mm:ss.fff", CultureInfo.InvariantCulture)
+                + ", " + HelpedFirstName + " " + HelpedLastName + ", " + SessionLenght.ToString() + ", " + TutorFirstName + " " + TutorLastName;
         }
     }
 }
