@@ -46,7 +46,7 @@ namespace TutoratAppl.Controller
                 s.DateSession.Year >= currentDate.Year
                 && s.DateSession.Month >= currentDate.Month
                 && s.DateSession.Day >= currentDate.Day
-                && s.DateSession.Hour >= currentDate.Hour).Select(ts =>
+                && s.DateSession.Hour > currentDate.Hour).Select(ts =>
                     new SessionListVM
                     {
                         DateTimeSession = ts.DateSession,
