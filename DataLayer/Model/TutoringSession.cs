@@ -11,7 +11,7 @@ namespace DataLayer.Model
         // Clé étrangère
         public int TutorId { get; set; }
         // Clé étrangère
-        public int HelpedId { get; set; }
+        public int HelpedStudentId { get; set; }
         public DateTime DateSession {get; set;}
         public int LenghtSession { get; set; }
         public virtual List<TutoringSession> tutoringSessions {get; set;}

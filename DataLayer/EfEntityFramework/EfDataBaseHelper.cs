@@ -85,7 +85,7 @@ namespace DataLayer.EfEntityFramework
         }
 
         private TutoringSession CreateTutoringSession(DateTime dateSession, int lenghtSession, HelpedStudent helpedStudent, Tutor tutor) {
-            return new TutoringSession{DateSession = dateSession, LenghtSession = lenghtSession, HelpedId = helpedStudent.Id, TutorId = tutor.Id};
+            return new TutoringSession{DateSession = dateSession, LenghtSession = lenghtSession, HelpedStudentId = helpedStudent.Id, TutorId = tutor.Id};
         }
 
         private void DeleteAll()
