@@ -18,6 +18,7 @@ namespace TutoratAppl
  
             TutorController tutorController = new TutorController(new EfEntityRepository<Tutor>());
             tutorController.ListAll();
+            tutorController.ListAllWithWorkingHoursTotal();
 
             Console.WriteLine("Appuyez sur une touche pour continuer...");
             Console.ReadKey();

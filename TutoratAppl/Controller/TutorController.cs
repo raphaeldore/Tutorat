@@ -44,7 +44,11 @@ namespace TutoratAppl.Controller
 
         public void ListAllWithWorkingHoursTotal()
         {
-        
+
+            var list = IEntityRepository.GetAll().Select(s => new TutorListTotalTutorHoursVM { LastName = s.LastName, FirstName = s.FirstName, EmailAddress = s.EmailAddress, TotalTutoringHours = s.tutoringSessions.Sum( x => (int?) x.LenghtSession) ?? 0});
+            TutorListTotalTutorHoursView display = new TutorListTotalTutorHoursView(list);
+
+            display.Display();
         }
 
         public void ListWhenNextTutoringSession()
