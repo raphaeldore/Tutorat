@@ -56,7 +56,7 @@ namespace TutoratAppl
             WaitForInput();
 
             Console.WriteLine("--- Requête No. 2 ---");
-            Console.WriteLine("Liste des tuteurs qui ont des rencontres de planifiées dans le future.\n");
+            Console.WriteLine("Liste des tuteurs qui ont des rencontres de planifiées dans le futur.\n"); //this is bugged
             tutoringSessionController.listAllFutureTutorTutoringSessions();
             WaitForInput();
 
