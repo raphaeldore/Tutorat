@@ -51,16 +51,6 @@ namespace TutoratAppl.Controller
             display.Display();
         }
 
-        public void ListWhenNextTutoringSession()
-        {
-        
-        }
-
-        public void ListWhenWithoutTutoringSession(DateTime sessionDate)
-        {
-            
-        }
-
         public void listAllFreeTutorOnDate(DateTime dateTime)
         {
             var list = IEntityRepository.GetAll().Where( t => 
