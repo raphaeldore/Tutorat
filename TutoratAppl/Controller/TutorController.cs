@@ -12,9 +12,9 @@ namespace TutoratAppl.Controller
 {
     public class TutorController
     {
-        private IEntityRepository<Entity> IEntityRepository;
+        private IEntityRepository<Tutor> IEntityRepository;
 
-        public TutorController(IEntityRepository<Entity> _IEntityRepository)
+        public TutorController(IEntityRepository<Tutor> _IEntityRepository)
         {
             this.IEntityRepository = _IEntityRepository;
         }
@@ -22,20 +22,26 @@ namespace TutoratAppl.Controller
         public void ListAll()
         {
             //Imprimer le nom, prénom, courriel, total heures tutorat, passéess et à venir, réalisées et planifiées
-            //TODO: À mapper manuellement?
-            List<TutorListVM> tutorList = new List<TutorListVM>();
-            TutorListVM currentTutor;
+            
+            //Manual mapping
+            //List<TutorListVM> tutorList = new List<TutorListVM>();
+            //TutorListVM currentTutor;
 
-            foreach(Tutor t in IEntityRepository.GetAll())
-            {
-                currentTutor = new TutorListVM();
-                currentTutor.EmailAddress = t.EmailAddress;
-                currentTutor.FirstName = t.FirstName;
-                currentTutor.LastName = t.LastName;
-                currentTutor.ID = t.Id;
-            }
+            //foreach(Tutor t in IEntityRepository.GetAll())
+            //{
+            //    currentTutor = new TutorListVM();
+            //    currentTutor.EmailAddress = t.EmailAddress;
+            //    currentTutor.FirstName = t.FirstName;
+            //    currentTutor.LastName = t.LastName;
+            //    currentTutor.ID = t.Id;
+            //}
 
-            TutorListView display = new TutorListView(tutorList);
+            //TutorListView display = new TutorListView(tutorList);
+            
+
+            var list = IEntityRepository.GetAll().Select(s => new TutorListVM { Id = s.Id, LastName = s.LastName, FirstName = s.FirstName, EmailAddress = s.EmailAddress });
+            TutorListView display = new TutorListView(list);
+
             display.Display();
         }
 
