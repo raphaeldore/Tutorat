@@ -67,5 +67,23 @@ namespace TutoratAppl.Controller
         {
             
         }
+
+        public void listAllFreeTutorOnDate(DateTime dateTime)
+        {
+            var list = IEntityRepository.GetAll().Where( t => 
+                t.tutoringSessions.Any(x =>
+                    x.DateSession.Year == dateTime.Year
+                    && x.DateSession.Month == dateTime.Month
+                    && x.DateSession.Day == dateTime.Day)).Select(tu =>
+                        new TutorListVM {
+                            Id = tu.Id,
+                            LastName = tu.LastName,
+                            FirstName = tu.FirstName,
+                            EmailAddress = tu.EmailAddress
+                        });
+
+            TutorListView display = new TutorListView(list);
+            display.Display();
+        }
     }
 }
