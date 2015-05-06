@@ -57,7 +57,7 @@ namespace TutoratAppl
 
             // TODO:
             //Console.WriteLine("--- Requête No. 2 ---");
-            //tutorController.listAllFuturTutorTutoringSessions();
+            //tutorController.listAllFutureTutorTutoringSessions();
             //WaitForInput();
 
             Console.WriteLine("--- Requête No. 3 ---");
