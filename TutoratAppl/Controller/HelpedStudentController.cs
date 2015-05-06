@@ -28,8 +28,29 @@ namespace TutoratAppl.Controller
             display.Display();
         }
 
-        public void ListWhenWithoutTutoringSession()
+        public void ListHelpStudentsWithoutTutoringSession()
         {
+            //var list2 = IEntityRepository.GetAll().Select(s => 
+            //    new HelpedStudentListVM { 
+            //        Id = s.Id,
+            //        LastName = s.LastName,
+            //        FirstName = s.FirstName,
+            //        EmailAddress = s.EmailAddress 
+            //    }).Where( hs => hs. );
+
+            // Ne fonctionne pas... Mais ça devrait:
+
+            var list = IEntityRepository.GetAll().Where(hs => hs.TutoringSessions.Count() == 0).Select(s =>
+                new HelpedStudentListVM {
+                    Id = s.Id,
+                    LastName = s.LastName,
+                    FirstName = s.FirstName,
+                    EmailAddress = s.EmailAddress
+                });
+
+            HelpedStudentListView display = new HelpedStudentListView(list);
+
+            display.Display();
             
         }
     }
