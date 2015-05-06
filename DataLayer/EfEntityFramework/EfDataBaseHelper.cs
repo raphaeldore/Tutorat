@@ -3,7 +3,7 @@ using System;
 
 namespace DataLayer.EfEntityFramework
 {
-    internal class EfDataBaseHelper
+    public class EfDataBaseHelper
     {
         private EfEntityRepository<Tutor> tutorRepository;
         private EfEntityRepository<HelpedStudent> helpedStudentRepository;
