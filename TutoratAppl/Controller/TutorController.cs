@@ -37,7 +37,6 @@ namespace TutoratAppl.Controller
             //}
 
             //TutorListView display = new TutorListView(tutorList);
-            
 
             var list = IEntityRepository.GetAll().Select(s => new TutorListVM { Id = s.Id, LastName = s.LastName, FirstName = s.FirstName, EmailAddress = s.EmailAddress });
             TutorListView display = new TutorListView(list);

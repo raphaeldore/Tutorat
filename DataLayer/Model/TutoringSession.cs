@@ -15,5 +15,7 @@ namespace DataLayer.Model
         public DateTime DateSession {get; set;}
         public int LenghtSession { get; set; }
         public virtual List<TutoringSession> tutoringSessions {get; set;}
+        public HelpedStudent helpedStudent { get; set; }
+        public Tutor tutor { get; set; }
     }
 }
