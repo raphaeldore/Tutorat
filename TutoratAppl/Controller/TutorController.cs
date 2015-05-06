@@ -51,9 +51,9 @@ namespace TutoratAppl.Controller
 
         public void listAllFreeTutorOnDate(DateTime dateTime)
         {
-            // On regarde si
+            // Liste des tuteurs qui n'ont aucune rencontre à un certain jour
             var tutorList = IEntityRepository.GetAll().Where(t =>
-                t.tutoringSessions.Any(x =>
+                !t.tutoringSessions.Any(x =>
                     x.DateSession.Year == dateTime.Year
                     && x.DateSession.Month == dateTime.Month
                     && x.DateSession.Day == dateTime.Day)).Select(tu =>
