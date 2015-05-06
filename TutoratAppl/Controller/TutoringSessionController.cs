@@ -43,10 +43,7 @@ namespace TutoratAppl.Controller
             DateTime currentDate = DateTime.Now.Date;
 
             var list = IEntityRepository.GetAll().Where(s =>
-                s.DateSession.Year >= currentDate.Year
-                && s.DateSession.Month >= currentDate.Month
-                && s.DateSession.Day >= currentDate.Day
-                && s.DateSession.Hour > currentDate.Hour).Select(ts =>
+                 DateTime.Compare(s.DateSession, currentDate) > 0).Select(ts =>
                     new SessionListVM
                     {
                         DateTimeSession = ts.DateSession,
