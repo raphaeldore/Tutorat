@@ -41,7 +41,7 @@ namespace TutoratAppl
             helpStudentController.ListAll();
             WaitForInput();
 
-            WaitForInput("--- Liste de tous les TutorinSessions ---");
+            WaitForInput("--- Liste de tous les TutoringSessions ---");
             tutoringSessionController.ListAll();
             WaitForInput();
 
