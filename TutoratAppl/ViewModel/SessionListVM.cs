@@ -18,7 +18,7 @@ namespace TutoratAppl.ViewModel
         public string TutorLastName { get; set; }
         public override string ToString()
         {
-            return Id.ToString() + " = " +  DateTimeSession.ToString("MM/dd/yyyy HH:mm:ss.fff", CultureInfo.InvariantCulture)
+            return Id.ToString() + " = " +  DateTimeSession.ToString("MM/dd/yyyy à HH:mm", CultureInfo.InvariantCulture)
                 + ", " + HelpedFirstName + " " + HelpedLastName + ", " + SessionLenght.ToString() + ", " + TutorFirstName + " " + TutorLastName;
         }
     }
