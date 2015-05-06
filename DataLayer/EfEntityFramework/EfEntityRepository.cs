@@ -1,6 +1,5 @@
 ﻿using DataLayer.Model;
 using System.Data.Entity;
-using System.Data.SqlClient;
 using System.Linq;
 
 namespace DataLayer.EfEntityFramework
@@ -21,7 +20,7 @@ namespace DataLayer.EfEntityFramework
 
         public T GetById(int id)
         {
-            return _context.Set<T>().Find(id); //Where(entity => entity.Id == id);
+            return _context.Set<T>().Find(id);
         }
 
         public void Delete(T entity)
@@ -44,14 +43,6 @@ namespace DataLayer.EfEntityFramework
 
         public void Update(T entity)
         {
-            //T originalEntity = GetById(entity.Id);
-            //if (originalEntity != null)
-            //{
-            //    originalEntity = entity;
-            //    _context.Entry(entity).State = EntityState.Modified;
-            //    _context.SaveChanges();
-            //}
-
             _context.Set<T>().Attach(entity);
             _context.Entry<T>(entity).State = EntityState.Modified;
             _context.SaveChanges();

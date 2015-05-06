@@ -48,7 +48,7 @@ namespace DataLayer.EfEntityFramework
             HelpedStudent hs_fHamel = new HelpedStudent { LastName = "Hamel", FirstName = "François", EmailAddress = "fhamel@fastmail.com" };
             HelpedStudent hs_jLepage = new HelpedStudent { LastName = "Lepage", FirstName = "Jérémy", EmailAddress = "jeremylepage@gmail.com" };
             HelpedStudent hs_nPoitras = new HelpedStudent { LastName = "Poitras", FirstName = "Nicolas", EmailAddress = "npoitras@fastmail.com" };
-            HelpedStudent hs_sRoyGagnon  = new HelpedStudent { LastName = "Roy-Gagnon", FirstName = "Samuel", EmailAddress = "samleroy@gmail.com" };
+            HelpedStudent hs_sRoyGagnon = new HelpedStudent { LastName = "Roy-Gagnon", FirstName = "Samuel", EmailAddress = "samleroy@gmail.com" };
             HelpedStudent hs_bSimard = new HelpedStudent { LastName = "Simard", FirstName = "Benjamin", EmailAddress = "benjaminsimard@fastmail.com" };
             HelpedStudent hs_sVachon = new HelpedStudent { LastName = "Vachon", FirstName = "Samuel", EmailAddress = "samvachon@hotmail.com" };
 
@@ -84,8 +84,9 @@ namespace DataLayer.EfEntityFramework
             tutoringSessionRepository.Add(CreateTutoringSession(new DateTime(2015, 6, 3, 13, 0, 0), 2, hs_jLepage, t_sGingras));
         }
 
-        private TutoringSession CreateTutoringSession(DateTime dateSession, int lenghtSession, HelpedStudent helpedStudent, Tutor tutor) {
-            return new TutoringSession{DateSession = dateSession, LenghtSession = lenghtSession, HelpedStudentId = helpedStudent.Id, TutorId = tutor.Id};
+        private TutoringSession CreateTutoringSession(DateTime dateSession, int lenghtSession, HelpedStudent helpedStudent, Tutor tutor)
+        {
+            return new TutoringSession { DateSession = dateSession, LenghtSession = lenghtSession, HelpedStudentId = helpedStudent.Id, TutorId = tutor.Id };
         }
 
         private void DeleteAll()

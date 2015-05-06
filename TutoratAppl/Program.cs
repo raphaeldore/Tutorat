@@ -1,21 +1,15 @@
 ﻿using DataLayer.EfEntityFramework;
 using DataLayer.Model;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using TutoratAppl.Controller;
 
 namespace TutoratAppl
 {
-    class Program
+    internal class Program
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
-
             /* ##################### Section B ##################### */
-
 
             /* ---------- Section B1 ---------- */
 
@@ -35,17 +29,12 @@ namespace TutoratAppl
 
             WaitForInput("--- Liste de tous les Tutors ---");
             tutorController.ListAll();
-            WaitForInput();
 
             WaitForInput("--- Liste de tous les HelpedStudents ---");
             helpStudentController.ListAll();
-            WaitForInput();
 
             WaitForInput("--- Liste de tous les TutoringSessions ---");
             tutoringSessionController.ListAll();
-            WaitForInput();
-
-
 
             /* ##################### Section C ##################### */
 
@@ -74,11 +63,11 @@ namespace TutoratAppl
             WaitForInput("Appuyez sur une touche pour quitter...");
         }
 
-        static void WaitForInput(string messageToDisplay = "Appuyez sur une touche pour continuer...")
+        private static void WaitForInput(string messageToDisplay = "Appuyez sur une touche pour continuer...")
         {
             Console.WriteLine("\n" + messageToDisplay);
             Console.ReadKey();
-            
+            Console.WriteLine();
         }
     }
 }
