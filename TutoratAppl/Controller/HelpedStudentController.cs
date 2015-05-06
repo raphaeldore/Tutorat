@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-using DataLayer;
+﻿using DataLayer;
 using DataLayer.Model;
+using System.Linq;
 using TutoratAppl.View;
 using TutoratAppl.ViewModel;
 
@@ -22,26 +17,34 @@ namespace TutoratAppl.Controller
 
         public void ListAll()
         {
-            var list = IEntityRepository.GetAll().Select(s => new HelpedStudentListVM { Id = s.Id, LastName = s.LastName, FirstName = s.FirstName, EmailAddress = s.EmailAddress });
-            HelpedStudentListView display = new HelpedStudentListView(list);
-
-            display.Display();
-        }
-
-        public void ListHelpStudentsWithoutTutoringSession()
-        {
-            var list = IEntityRepository.GetAll().Where(hs => hs.TutoringSessions.Count() == 0).Select(s =>
-                new HelpedStudentListVM {
+            var helpedStudentsList = IEntityRepository.GetAll().Select(s =>
+                new HelpedStudentListVM
+                {
                     Id = s.Id,
                     LastName = s.LastName,
                     FirstName = s.FirstName,
                     EmailAddress = s.EmailAddress
                 });
 
-            HelpedStudentListView display = new HelpedStudentListView(list);
+            HelpedStudentListView display = new HelpedStudentListView(helpedStudentsList);
 
             display.Display();
-            
+        }
+
+        public void ListHelpStudentsWithoutTutoringSession()
+        {
+            var helpedStudentsList = IEntityRepository.GetAll().Where(hs => hs.TutoringSessions.Count() == 0).Select(s =>
+                new HelpedStudentListVM
+                {
+                    Id = s.Id,
+                    LastName = s.LastName,
+                    FirstName = s.FirstName,
+                    EmailAddress = s.EmailAddress
+                });
+
+            HelpedStudentListView display = new HelpedStudentListView(helpedStudentsList);
+
+            display.Display();
         }
     }
 }
