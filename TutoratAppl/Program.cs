@@ -25,7 +25,7 @@ namespace TutoratAppl
             TutoringSessionController tutoringSessionController = new TutoringSessionController(new EfEntityRepository<TutoringSession>());
 
             /* ---------- Section B2 ---------- */
-            WaitForInput("###### Section B2 : Toutes les données des tables ######");
+            Console.WriteLine("###### Section B2 : Toutes les données des tables ######");
 
             WaitForInput("--- Liste de tous les Tutors ---");
             tutorController.ListAll();
@@ -38,7 +38,8 @@ namespace TutoratAppl
 
             /* ##################### Section C ##################### */
 
-            WaitForInput("###### Section C: Requêtes ######");
+            Console.WriteLine("###### Section C: Requêtes ######");
+           
             Console.WriteLine("--- Requête No. 1 ---");
             Console.WriteLine("Liste de tous les tuteurs, avec le nombre total d'heures de tutorat (passé, présent, futur)\n");
             tutorController.ListAllWithWorkingHoursTotal();
