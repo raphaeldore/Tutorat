@@ -11,5 +11,6 @@ namespace DataLayer.Model
         public string LastName { get; set; }
         public string FirstName { get; set; }
         public string EmailAddress { get; set; }
+        public virtual List<TutoringSession> TutoringSessions { get; set; }
     }
 }
