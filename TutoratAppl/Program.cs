@@ -56,10 +56,10 @@ namespace TutoratAppl
             WaitForInput();
 
             // TODO:
-            //Console.WriteLine("--- Requête No. 2 ---");
-            //Console.WriteLine("Liste des tuteurs qui ont des rencontres de planifiées dans le future.\n")
-            //tutorController.listAllFutureTutorTutoringSessions();
-            //WaitForInput();
+            Console.WriteLine("--- Requête No. 2 ---");
+            Console.WriteLine("Liste des tuteurs qui ont des rencontres de planifiées dans le future.\n");
+            tutoringSessionController.listAllFutureTutorTutoringSessions();
+            WaitForInput();
 
             Console.WriteLine("--- Requête No. 3 ---");
             Console.WriteLine("Liste des étudiants aidées qui n'ont pas obtenu pour l'instant de rencontre avec un tuteur\n");
