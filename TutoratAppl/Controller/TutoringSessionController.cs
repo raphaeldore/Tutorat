@@ -22,7 +22,17 @@ namespace TutoratAppl.Controller
 
         public void ListAll()
         {
-            var list = IEntityRepository.GetAll().Select(s => new SessionListVM { Id = s.Id, DateTimeSession = s.DateSession, HelpedFirstName = s.helpedStudent.FirstName, HelpedLastName = s.helpedStudent.LastName, SessionLenght = s.LenghtSession, TutorFirstName = s.tutor.FirstName, TutorLastName = s.tutor.LastName });
+            var list = IEntityRepository.GetAll().Select(s => 
+                new SessionListVM { 
+                    Id = s.Id, 
+                    DateTimeSession = s.DateSession,
+                    HelpedFirstName = s.helpedStudent.FirstName,
+                    HelpedLastName = s.helpedStudent.LastName, 
+                    SessionLenght = s.LenghtSession, 
+                    TutorFirstName = s.tutor.FirstName, 
+                    TutorLastName = s.tutor.LastName 
+                });
+
             SessionListView display = new SessionListView(list);
 
             display.Display();
