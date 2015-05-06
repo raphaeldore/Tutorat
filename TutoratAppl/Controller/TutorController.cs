@@ -26,7 +26,6 @@ namespace TutoratAppl.Controller
             //Manual mapping
             //List<TutorListVM> tutorList = new List<TutorListVM>();
             //TutorListVM currentTutor;
-
             //foreach(Tutor t in IEntityRepository.GetAll())
             //{
             //    currentTutor = new TutorListVM();
@@ -35,7 +34,6 @@ namespace TutoratAppl.Controller
             //    currentTutor.LastName = t.LastName;
             //    currentTutor.ID = t.Id;
             //}
-
             //TutorListView display = new TutorListView(tutorList);
 
             var list = IEntityRepository.GetAll().Select(s => new TutorListVM { Id = s.Id, LastName = s.LastName, FirstName = s.FirstName, EmailAddress = s.EmailAddress });

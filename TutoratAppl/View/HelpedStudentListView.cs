@@ -7,18 +7,18 @@ using TutoratAppl.ViewModel;
 
 namespace TutoratAppl.View
 {
-    public class HelpedListView
+    public class HelpedStudentListView
     {
-        IEnumerable<HelpedListVM> HelpedStudents;
+        IEnumerable<HelpedStudentListVM> HelpedStudents;
 
-        public HelpedListView(IEnumerable<HelpedListVM> _HelpedStudents)
+        public HelpedStudentListView(IEnumerable<HelpedStudentListVM> _HelpedStudents)
         {
             HelpedStudents = _HelpedStudents;
         }
 
         public void Display()
         {
-            foreach (HelpedListVM h in HelpedStudents)
+            foreach (HelpedStudentListVM h in HelpedStudents)
             {
                 Console.WriteLine(h.ToString());
             }

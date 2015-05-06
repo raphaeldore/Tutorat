@@ -22,8 +22,8 @@ namespace TutoratAppl.Controller
 
         public void ListAll()
         {
-            var list = IEntityRepository.GetAll().Select(s => new HelpedListVM { Id = s.Id, LastName = s.LastName, FirstName = s.FirstName, EmailAddress = s.EmailAddress });
-            HelpedListView display = new HelpedListView(list);
+            var list = IEntityRepository.GetAll().Select(s => new HelpedStudentListVM { Id = s.Id, LastName = s.LastName, FirstName = s.FirstName, EmailAddress = s.EmailAddress });
+            HelpedStudentListView display = new HelpedStudentListView(list);
 
             display.Display();
         }

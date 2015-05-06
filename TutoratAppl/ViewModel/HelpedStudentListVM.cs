@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TutoratAppl.ViewModel
 {
-    public class HelpedListVM
+    public class HelpedStudentListVM
     {
         public string EmailAddress { get; set; }
         public string FirstName { get; set; }
