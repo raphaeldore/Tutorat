@@ -13,27 +13,72 @@ namespace TutoratAppl
     {
         static void Main(string[] args)
         {
+
+            /* ##################### Section B ##################### */
+
+
+            /* ---------- Section B1 ---------- */
+
+            /* *Réinitialisation* et *Peuplement* des tables */
+            Console.WriteLine("Initialisation des tables de la BD...");
             EfDataBaseHelper helper = new EfDataBaseHelper();
             helper.SeedDatabase();
- 
+            WaitForInput("Initialisation terminée. Appuyez sur une touche pour continuer...");
+
+            /* On initialise les contrôleurs avec le bon type de dépôt */
             TutorController tutorController = new TutorController(new EfEntityRepository<Tutor>());
-            tutorController.ListAll();
-            tutorController.ListAllWithWorkingHoursTotal();
-
-            Console.WriteLine("Appuyez sur une touche pour continuer...");
-            Console.ReadKey();
-
             HelpedStudentController helpStudentController = new HelpedStudentController(new EfEntityRepository<HelpedStudent>());
-            helpStudentController.ListAll();
-
-            Console.WriteLine("Appuyez sur une touche pour continuer...");
-            Console.ReadKey();
-
             TutoringSessionController tutoringSessionController = new TutoringSessionController(new EfEntityRepository<TutoringSession>());
-            tutoringSessionController.ListAll();
 
-            Console.WriteLine("Appuyez sur une touche pour quitter. ");
+            /* ---------- Section B2 ---------- */
+            WaitForInput("###### Section B2 : Toutes les données des tables ######");
+
+            WaitForInput("--- Liste de tous les Tutors ---");
+            tutorController.ListAll();
+            WaitForInput();
+
+            WaitForInput("--- Liste de tous les HelpedStudents ---");
+            helpStudentController.ListAll();
+            WaitForInput();
+
+            WaitForInput("--- Liste de tous les TutorinSessions ---");
+            tutoringSessionController.ListAll();
+            WaitForInput();
+
+
+
+            /* ##################### Section C ##################### */
+
+            WaitForInput("###### Section C: Requêtes ######");
+            Console.WriteLine("--- Requête No. 1 ---");
+            Console.WriteLine("Liste de tous les tuteurs, avec le nombre total d'heures de tutorat (passé, présent, futur)\n");
+            tutorController.ListAllWithWorkingHoursTotal();
+            WaitForInput();
+
+            // TODO:
+            //Console.WriteLine("--- Requête No. 2 ---");
+            //tutorController.listAllFuturTutorTutoringSessions();
+            //WaitForInput();
+
+            Console.WriteLine("--- Requête No. 3 ---");
+            Console.WriteLine("Liste des étudiants aidées qui n'ont pas obtenu pour l'instant de rencontre avec un tuteur\n");
+            helpStudentController.ListHelpStudentsWithoutTutoringSession();
+            WaitForInput();
+
+            Console.WriteLine("--- Requête No. 4 ---");
+            Console.WriteLine("Liste des tuteurs qui n'ont aucune rencontre prévue le 2 Juin 2015\n");
+            tutorController.listAllFreeTutorOnDate(new DateTime(2015, 6, 2, 0, 0, 0));
+            WaitForInput();
+
+            Console.WriteLine("C'est la fin!");
+            WaitForInput("Appuyez sur une touche pour quitter...");
+        }
+
+        static void WaitForInput(string messageToDisplay = "Appuyez sur une touche pour continuer...")
+        {
+            Console.WriteLine("\n" + messageToDisplay);
             Console.ReadKey();
+            
         }
     }
 }
