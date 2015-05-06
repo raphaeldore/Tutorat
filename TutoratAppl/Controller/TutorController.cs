@@ -44,7 +44,18 @@ namespace TutoratAppl.Controller
 
         public void ListAllWithWorkingHoursTotal()
         {
-        
+
+            var list = IEntityRepository.GetAll().Select(s => 
+                new TutorListTotalTutorHoursVM { 
+                    LastName = s.LastName, 
+                    FirstName = s.FirstName, 
+                    EmailAddress = s.EmailAddress, 
+                    TotalTutoringHours = s.tutoringSessions.Sum( x => (int?) x.LenghtSession) ?? 0
+                });
+
+            TutorListTotalTutorHoursView display = new TutorListTotalTutorHoursView(list);
+
+            display.Display();
         }
 
         public void ListWhenNextTutoringSession()
@@ -55,6 +66,24 @@ namespace TutoratAppl.Controller
         public void ListWhenWithoutTutoringSession(DateTime sessionDate)
         {
             
+        }
+
+        public void listAllFreeTutorOnDate(DateTime dateTime)
+        {
+            var list = IEntityRepository.GetAll().Where( t => 
+                t.tutoringSessions.Any(x =>
+                    x.DateSession.Year == dateTime.Year
+                    && x.DateSession.Month == dateTime.Month
+                    && x.DateSession.Day == dateTime.Day)).Select(tu =>
+                        new TutorListVM {
+                            Id = tu.Id,
+                            LastName = tu.LastName,
+                            FirstName = tu.FirstName,
+                            EmailAddress = tu.EmailAddress
+                        });
+
+            TutorListView display = new TutorListView(list);
+            display.Display();
         }
     }
 }
