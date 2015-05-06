@@ -19,11 +19,20 @@ namespace TutoratAppl
             TutorController tutorController = new TutorController(new EfEntityRepository<Tutor>());
             tutorController.ListAll();
 
-            //HelpedStudentController helpStudentController = new HelpedStudentController(new EfEntityRepository<HelpedStudent>());
-            //helpStudentController.ListAll();
+            Console.WriteLine("Appuyez sur une touche pour continuer...");
+            Console.ReadKey();
 
-            //TutoringSessionController tutoringSessionController = new TutoringSessionController(new EfEntityRepository<TutoringSession>());
-            //tutoringSessionController.ListAll();
+            HelpedStudentController helpStudentController = new HelpedStudentController(new EfEntityRepository<HelpedStudent>());
+            helpStudentController.ListAll();
+
+            Console.WriteLine("Appuyez sur une touche pour continuer...");
+            Console.ReadKey();
+
+            TutoringSessionController tutoringSessionController = new TutoringSessionController(new EfEntityRepository<TutoringSession>());
+            tutoringSessionController.ListAll();
+
+            Console.WriteLine("Appuyez sur une touche pour quitter. ");
+            Console.ReadKey();
         }
     }
 }
