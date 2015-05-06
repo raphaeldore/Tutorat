@@ -9,10 +9,10 @@ namespace DataLayer.Model
 {
     public class Tutor : Entity
     {
-        [Required]
-        public string LastName { get; set; }
-        public string FirstName { get; set; }
         public string EmailAddress { get; set; }
+        [Required]
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
         public virtual List<HelpedStudent> helpedStudents { get; set; }
         public virtual List<TutoringSession> tutoringSessions {get; set;}
     }

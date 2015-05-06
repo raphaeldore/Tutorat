@@ -22,6 +22,7 @@ namespace TutoratAppl.Controller
         public void ListAll()
         {
             //Imprimer le nom, prénom, courriel, total heures tutorat, passéess et à venir, réalisées et planifiées
+            //TODO: À mapper manuellement?
             TutorListView display = new TutorListView(IEntityRepository.GetAll().ToList<TutorListVM>());
             display.Display();
         }
